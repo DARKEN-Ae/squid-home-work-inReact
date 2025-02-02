@@ -1,0 +1,38 @@
+header {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 88px;
+      li {
+        list-style-type: none;
+        .nav_link {
+          text-decoration: none;
+          color: rgba(255, 255, 255, 1);
+          &:hover {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+          }
+        }
+      }
+      .contact-us_btn {
+        background: rgba(216, 0, 39, 1);
+        width: 131.77px;
+        height: 41.34px;
+        border-radius: 6px;
+        border: none;
+        color: rgba(255, 255, 255, 1);
+        font-family: "Montserrat", serif;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          background: rgba(255, 255, 255, 0.8);
+          color: rgba(216, 0, 39, 1);
+        }
+      }
+    }
+  }
+}

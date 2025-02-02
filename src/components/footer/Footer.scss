@@ -1,0 +1,97 @@
+footer {
+  background: rgba(255, 255, 255, 1);
+  padding: 50px 0;
+  .footer_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .ft_one {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 25px;
+      p {
+        width: 372px;
+        color: rgba(0, 0, 0, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+    }
+    .footer_center {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      h3 {
+        color: rgba(0, 0, 0, 1);
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 25.5px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      ul {
+        li {
+          list-style: none;
+
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 29.81px;
+          text-align: left;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+
+          &:hover {
+            color: #61dafb;
+          }
+        }
+      }
+    }
+    .footer_end {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      h3 {
+        color: rgba(0, 0, 0, 1);
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 25.5px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      p {
+        width: 282px;
+        color: rgba(0, 0, 0, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+    }
+    .social_media {
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          list-style: none;
+          img {
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+  hr {
+    border: 0.8px solid rgba(0, 0, 0, 1);
+  }
+}
