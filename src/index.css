@@ -5,9 +5,8 @@
 }
 *,
 ::before,
-::after {
+*::after {
   box-sizing: border-box;
-  transition: 0.3s ease-in-out;
 }
 
 html,
@@ -18,5 +17,5 @@ body {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
