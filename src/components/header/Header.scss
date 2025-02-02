@@ -1,38 +1,82 @@
 header {
-  nav {
+  padding: 15px 5%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav_link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+
+.contact-us_btn {
+  background: rgba(216, 0, 39, 1);
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-family: "Montserrat", serif;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-us_btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: rgba(216, 0, 39, 1);
+}
+
+@media (max-width: 768px) {
+  ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 88px;
-      li {
-        list-style-type: none;
-        .nav_link {
-          text-decoration: none;
-          color: rgba(255, 255, 255, 1);
-          &:hover {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: underline;
-          }
-        }
-      }
-      .contact-us_btn {
-        background: rgba(216, 0, 39, 1);
-        width: 131.77px;
-        height: 41.34px;
-        border-radius: 6px;
-        border: none;
-        color: rgba(255, 255, 255, 1);
-        font-family: "Montserrat", serif;
-        cursor: pointer;
-        transition: 0.3s ease-in-out;
-        &:hover {
-          background: rgba(255, 255, 255, 0.8);
-          color: rgba(216, 0, 39, 1);
-        }
-      }
-    }
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .mobile-menu li {
+    padding: 10px 0;
+  }
+
+  .mobile-menu .contact-us_btn {
+    width: 100%;
   }
 }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import "./sass/News.scss";
 
 export class News extends Component {
   render() {
-    return <div>News</div>;
+    return <h1 className="container">News</h1>;
   }
 }
 

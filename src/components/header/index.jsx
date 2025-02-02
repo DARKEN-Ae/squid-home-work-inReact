@@ -3,7 +3,15 @@ import { Link } from "react-router-dom";
 import HeaderLogo from "../assets/LOGO.png";
 import "./Header.scss";
 
-export class index extends Component {
+export class Index extends Component {
+  state = {
+    menuOpen: false,
+  };
+
+  toggleMenu = () => {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  };
+
   render() {
     return (
       <header>
@@ -12,28 +20,47 @@ export class index extends Component {
             <Link to={"/"}>
               <img src={HeaderLogo} alt="HeaderLogo" />
             </Link>
-            <ul>
+
+            <div className="menu-icon" onClick={this.toggleMenu}>
+              ☰
+            </div>
+
+            <ul className={this.state.menuOpen ? "mobile-menu" : ""}>
               <li>
-                <Link className="nav_link" to={"/"}>
+                <Link className="nav_link" to={"/"} onClick={this.toggleMenu}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="nav_link" to={"/about"}>
+                <Link
+                  className="nav_link"
+                  to={"/about"}
+                  onClick={this.toggleMenu}
+                >
                   About us
                 </Link>
               </li>
               <li>
-                <Link className="nav_link" to={"/portfolio"}>
-                  Portfolio
+                <Link
+                  className="nav_link"
+                  to={"/services"}
+                  onClick={this.toggleMenu}
+                >
+                  Servies
                 </Link>
               </li>
               <li>
-                <Link className="nav_link" to={"/news"}>
+                <Link
+                  className="nav_link"
+                  to={"/news"}
+                  onClick={this.toggleMenu}
+                >
                   News
                 </Link>
               </li>
-              <button className="contact-us_btn">Contact us</button>
+              <button className="contact-us_btn" onClick={this.toggleMenu}>
+                Contact us
+              </button>
             </ul>
           </nav>
         </div>
@@ -42,4 +69,4 @@ export class index extends Component {
   }
 }
 
-export default index;
+export default Index;

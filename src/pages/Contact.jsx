@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import "./sass/Contact.scss";
 
 export class Contact extends Component {
   render() {
-    return <div>Contact</div>;
+    return <h1 className="container">Contact</h1>;
   }
 }
 

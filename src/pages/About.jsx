@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
+import "./sass/About.scss";
 export class About extends Component {
   render() {
-    return <div>About</div>;
+    return <h1 className="container">About</h1>;
   }
 }
 
