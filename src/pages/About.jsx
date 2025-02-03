@@ -7,10 +7,27 @@ import Bill from "../components/assets/About/icons/Bill.svg";
 import wommen from "../components/assets/About/icons/wommen.svg";
 import wommen_2 from "../components/assets/About/icons/wommen_2.svg";
 import user from "../components/assets/About/icons/users.svg";
-//
+import rightSectionImg from "../components/assets/About/assasin.png";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export class About extends Component {
   render() {
+    const settings = {
+      infinite: true, // Cheksiz aylanish
+      speed: 500, // Animatsiya tezligi
+      slidesToShow: 1, // Ko‘rsatiladigan slaydlar soni
+      slidesToScroll: 1, // Har bir bosishda nechta slayd o‘tishi
+      autoplay: true, // Avtomatik o‘tish
+      autoplaySpeed: 3000, // Har 3 sekundda o‘tish
+      arrows: false, // Yon o‘qlarni ko‘rsatish
+      customPaging: (i) => (
+        <div className="custom-dot">{i + 1}</div> // Dotslarni belgilarga o‘zgartirish
+      ),
+      dots: true,
+    };
     return (
       <div>
         <nav className="container">
@@ -21,15 +38,29 @@ export class About extends Component {
                 <img src={arrow} alt="No img?" />
                 <NavLink to="#">About us</NavLink>
               </div>
-              <h1> Lorem Ipsum is simply dummy text of the printing and.</h1>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
-              </p>
-              <button>
-                Get in touch <img src={arrow} alt="No img?" />
-              </button>
+              <div className="right_section">
+                <div className="in_text_left">
+                  <h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s.
+                  </p>
+                  <button>
+                    Get in touch <img src={arrow} alt="No img?" />
+                  </button>
+                </div>
+                <div className="custom-carousel-wrapper">
+                  <Slider {...settings}>
+                    <div className="custom-carousel-item">
+                      <img src={rightSectionImg} alt="Slide 1" />
+                    </div>
+                    <div className="custom-carousel-item">
+                      <img src={rightSectionImg} alt="Slide 2" />
+                    </div>
+                  </Slider>
+                </div>
+              </div>
             </div>
             <div className="nav_img"></div>
           </div>
