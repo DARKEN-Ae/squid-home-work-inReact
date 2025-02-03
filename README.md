@@ -1,1 +1,1 @@
-by squid {arslon, alisher, shoxobiddin}
+by squid {arslon, alisher, shoxobiddin , firdavs}
