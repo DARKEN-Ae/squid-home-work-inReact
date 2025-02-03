@@ -73,9 +73,11 @@ export class Index extends Component {
                   News
                 </Link>
               </li>
-              <button className="contact-us_btn" onClick={this.toggleMenu}>
-                Contact us
-              </button>
+              <Link to={"/contact"}>
+                <button className="contact-us_btn" onClick={this.toggleMenu}>
+                  Contact us
+                </button>
+              </Link>
             </ul>
           </nav>
         </div>
