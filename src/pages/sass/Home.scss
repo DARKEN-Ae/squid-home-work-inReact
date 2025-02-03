@@ -123,23 +123,224 @@ main {
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
     }
-    button {
-      width: 139px;
-      height: 57px;
-      background: rgba(255, 255, 255, 0.11);
-      border-radius: 10px;
-      color: rgba(255, 255, 255, 1);
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 37.5px;
-      text-align: center;
-      text-underline-position: from-font;
-      text-decoration-skip-ink: none;
-      opacity: 70%;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-      &:hover {
-        opacity: 100%;
+    .see_all_one_btn {
+      .button {
+        --h-button: 48px;
+        --w-button: 102px;
+        --round: 0.75rem;
+        cursor: pointer;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(223, 113, 255, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+          ),
+          linear-gradient(0deg, #7a5af8, #7a5af8);
+        border-radius: var(--round);
+        border: none;
+        outline: none;
+        padding: 12px 18px;
+      }
+      .button::before,
+      .button::after {
+        content: "";
+        position: absolute;
+        inset: var(--space);
+        transition: all 0.5s ease-in-out;
+        border-radius: calc(var(--round) - var(--space));
+        z-index: 0;
+      }
+      .button::before {
+        --space: 1px;
+        background: linear-gradient(
+          177.95deg,
+          rgba(255, 255, 255, 0.19) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+      .button::after {
+        --space: 2px;
+        background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(223, 113, 255, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+          ),
+          linear-gradient(0deg, #7a5af8, #7a5af8);
+      }
+      .button:active {
+        transform: scale(0.95);
+      }
+
+      .fold {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 1rem;
+        width: 1rem;
+        display: inline-block;
+        transition: all 0.5s ease-in-out;
+        background: radial-gradient(
+          100% 75% at 55%,
+          rgba(223, 113, 255, 0.8) 0%,
+          rgba(223, 113, 255, 0) 100%
+        );
+        box-shadow: 0 0 3px black;
+        border-bottom-left-radius: 0.5rem;
+        border-top-right-radius: var(--round);
+      }
+      .fold::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150%;
+        height: 150%;
+        transform: rotate(45deg) translateX(0%) translateY(-18px);
+        background-color: #e8e8e8;
+        pointer-events: none;
+      }
+      .button:hover .fold {
+        margin-top: -1rem;
+        margin-right: -1rem;
+      }
+
+      .points_wrapper {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .points_wrapper .point {
+        bottom: -10px;
+        position: absolute;
+        animation: floating-points infinite ease-in-out;
+        pointer-events: none;
+        width: 2px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 9999px;
+      }
+      @keyframes floating-points {
+        0% {
+          transform: translateY(0);
+        }
+        85% {
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(-55px);
+          opacity: 0;
+        }
+      }
+      .points_wrapper .point:nth-child(1) {
+        left: 10%;
+        opacity: 1;
+        animation-duration: 2.35s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(2) {
+        left: 30%;
+        opacity: 0.7;
+        animation-duration: 2.5s;
+        animation-delay: 0.5s;
+      }
+      .points_wrapper .point:nth-child(3) {
+        left: 25%;
+        opacity: 0.8;
+        animation-duration: 2.2s;
+        animation-delay: 0.1s;
+      }
+      .points_wrapper .point:nth-child(4) {
+        left: 44%;
+        opacity: 0.6;
+        animation-duration: 2.05s;
+      }
+      .points_wrapper .point:nth-child(5) {
+        left: 50%;
+        opacity: 1;
+        animation-duration: 1.9s;
+      }
+      .points_wrapper .point:nth-child(6) {
+        left: 75%;
+        opacity: 0.5;
+        animation-duration: 1.5s;
+        animation-delay: 1.5s;
+      }
+      .points_wrapper .point:nth-child(7) {
+        left: 88%;
+        opacity: 0.9;
+        animation-duration: 2.2s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(8) {
+        left: 58%;
+        opacity: 0.8;
+        animation-duration: 2.25s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(9) {
+        left: 98%;
+        opacity: 0.6;
+        animation-duration: 2.6s;
+        animation-delay: 0.1s;
+      }
+      .points_wrapper .point:nth-child(10) {
+        left: 65%;
+        opacity: 1;
+        animation-duration: 2.5s;
+        animation-delay: 0.2s;
+      }
+
+      .inner {
+        z-index: 2;
+        gap: 6px;
+        position: relative;
+        width: 100%;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        transition: color 0.2s ease-in-out;
+      }
+
+      .inner svg.icon {
+        width: 18px;
+        height: 18px;
+        transition: fill 0.1s linear;
+      }
+
+      .button:focus svg.icon {
+        fill: white;
+      }
+      .button:hover svg.icon {
+        fill: transparent;
+        animation: dasharray 1s linear forwards,
+          filled 0.1s linear forwards 0.95s;
+      }
+      @keyframes dasharray {
+        from {
+          stroke-dasharray: 0 0 0 0;
+        }
+        to {
+          stroke-dasharray: 68 68 0 0;
+        }
+      }
+      @keyframes filled {
+        to {
+          fill: white;
+        }
       }
     }
   }
@@ -307,35 +508,56 @@ main {
       display: flex;
       flex-direction: column;
       gap: 62px;
+      padding: 0 20px; // Ekranga moslashuvchan bo'lishi uchun
 
       .first_fours {
         display: flex;
         align-items: center;
-        justify-content: center;
         justify-content: space-around;
-        @media (max-width: 855px) {
-          flex-wrap: wrap;
+        flex-wrap: wrap; // Kichik ekranlarda moslashish uchun
+        gap: 20px; // Elementlar orasidagi bo'shliq
+
+        @media (max-width: 768px) {
+          justify-content: center;
+          gap: 15px;
         }
       }
+
       .content {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        max-width: 800px; // Juda keng bo'lib ketmasligi uchun
+        margin: 0 auto; // Markazga joylash uchun
+
         p {
-          color: rgba(255, 255, 255, 1);
+          color: #fff;
           font-size: 16px;
           font-weight: 500;
           line-height: 30px;
           text-align: center;
           text-underline-position: from-font;
           text-decoration-skip-ink: none;
+
+          @media (max-width: 768px) {
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
       }
+
       .last_content {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap; // Moslashuvchan qilish uchun
+        gap: 20px;
+
+        @media (max-width: 600px) {
+          flex-direction: column; // Juda kichik ekranlar uchun ustun shaklida
+          gap: 15px;
+        }
       }
     }
   }
@@ -364,7 +586,7 @@ main {
       text-align: center;
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
-      width: 497px;
+      max-width: 100%;
     }
     .section-seven-cards {
       margin-top: 80px;
@@ -376,18 +598,233 @@ main {
       padding-bottom: 80px;
       img {
         transition: 0.3s ease-in-out;
+        max-width: 100%;
       }
       img:hover {
         transform: scale(1.1);
       }
     }
-    button {
-      background: rgba(255, 255, 255, 0.11);
-      width: 139px;
-      height: 57px;
-      border-radius: 10px;
-      cursor: pointer;
-      color: rgba(255, 255, 255, 1);
+    .see_all_btn {
+      .button {
+        font-family: "Montserrat", serif;
+
+        --h-button: 48px;
+        --w-button: 102px;
+        --round: 0.75rem;
+        cursor: pointer;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(223, 113, 255, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+          ),
+          linear-gradient(0deg, #7a5af8, #7a5af8);
+        border-radius: var(--round);
+        border: none;
+        outline: none;
+        padding: 12px 18px;
+      }
+      .button::before,
+      .button::after {
+        content: "";
+        position: absolute;
+        inset: var(--space);
+        transition: all 0.5s ease-in-out;
+        border-radius: calc(var(--round) - var(--space));
+        z-index: 0;
+      }
+      .button::before {
+        --space: 1px;
+        background: linear-gradient(
+          177.95deg,
+          rgba(255, 255, 255, 0.19) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+      .button::after {
+        --space: 2px;
+        background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(223, 113, 255, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+          ),
+          linear-gradient(0deg, #7a5af8, #7a5af8);
+      }
+      .button:active {
+        transform: scale(0.95);
+      }
+
+      .fold {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 1rem;
+        width: 1rem;
+        display: inline-block;
+        transition: all 0.5s ease-in-out;
+        background: radial-gradient(
+          100% 75% at 55%,
+          rgba(223, 113, 255, 0.8) 0%,
+          rgba(223, 113, 255, 0) 100%
+        );
+        box-shadow: 0 0 3px black;
+        border-bottom-left-radius: 0.5rem;
+        border-top-right-radius: var(--round);
+      }
+      .fold::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150%;
+        height: 150%;
+        transform: rotate(45deg) translateX(0%) translateY(-18px);
+        background-color: #e8e8e8;
+        pointer-events: none;
+      }
+      .button:hover .fold {
+        margin-top: -1rem;
+        margin-right: -1rem;
+      }
+
+      .points_wrapper {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .points_wrapper .point {
+        bottom: -10px;
+        position: absolute;
+        animation: floating-points infinite ease-in-out;
+        pointer-events: none;
+        width: 2px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 9999px;
+      }
+      @keyframes floating-points {
+        0% {
+          transform: translateY(0);
+        }
+        85% {
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(-55px);
+          opacity: 0;
+        }
+      }
+      .points_wrapper .point:nth-child(1) {
+        left: 10%;
+        opacity: 1;
+        animation-duration: 2.35s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(2) {
+        left: 30%;
+        opacity: 0.7;
+        animation-duration: 2.5s;
+        animation-delay: 0.5s;
+      }
+      .points_wrapper .point:nth-child(3) {
+        left: 25%;
+        opacity: 0.8;
+        animation-duration: 2.2s;
+        animation-delay: 0.1s;
+      }
+      .points_wrapper .point:nth-child(4) {
+        left: 44%;
+        opacity: 0.6;
+        animation-duration: 2.05s;
+      }
+      .points_wrapper .point:nth-child(5) {
+        left: 50%;
+        opacity: 1;
+        animation-duration: 1.9s;
+      }
+      .points_wrapper .point:nth-child(6) {
+        left: 75%;
+        opacity: 0.5;
+        animation-duration: 1.5s;
+        animation-delay: 1.5s;
+      }
+      .points_wrapper .point:nth-child(7) {
+        left: 88%;
+        opacity: 0.9;
+        animation-duration: 2.2s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(8) {
+        left: 58%;
+        opacity: 0.8;
+        animation-duration: 2.25s;
+        animation-delay: 0.2s;
+      }
+      .points_wrapper .point:nth-child(9) {
+        left: 98%;
+        opacity: 0.6;
+        animation-duration: 2.6s;
+        animation-delay: 0.1s;
+      }
+      .points_wrapper .point:nth-child(10) {
+        left: 65%;
+        opacity: 1;
+        animation-duration: 2.5s;
+        animation-delay: 0.2s;
+      }
+
+      .inner {
+        z-index: 2;
+        gap: 6px;
+        position: relative;
+        width: 100%;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        transition: color 0.2s ease-in-out;
+      }
+
+      .inner svg.icon {
+        width: 18px;
+        height: 18px;
+        transition: fill 0.1s linear;
+      }
+
+      .button:focus svg.icon {
+        fill: white;
+      }
+      .button:hover svg.icon {
+        fill: transparent;
+        animation: dasharray 1s linear forwards,
+          filled 0.1s linear forwards 0.95s;
+      }
+      @keyframes dasharray {
+        from {
+          stroke-dasharray: 0 0 0 0;
+        }
+        to {
+          stroke-dasharray: 68 68 0 0;
+        }
+      }
+      @keyframes filled {
+        to {
+          fill: white;
+        }
+      }
     }
   }
 }
@@ -414,7 +851,7 @@ main {
       text-align: left;
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
-      width: 545px;
+      max-width: 100%;
     }
   }
   .form_div {

@@ -29,7 +29,16 @@ import ProjectCardImg6 from "../components/assets/Home/img/project_card6.png";
 import "./sass/Home.scss";
 import Slider from "react-slick";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export class Home extends Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }
   render() {
     const settings = {
       dots: true,
@@ -41,23 +50,26 @@ export class Home extends Component {
     return (
       <Fragment>
         {/* 1 */}
-        <main className="container">
-          <div className="jostic">
-            <img src={josticImg} alt="josticImg" />
-          </div>
-          <div className="section-one">
-            <div className="sc-one-text">
-              <h5>Proved By prodesigner</h5>
-              <h1>Work that we produce for our clients</h1>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard.
-              </p>
-              <button>Get more details</button>
+        <main className="section__one">
+          <div className="container">
+            <div className="jostic">
+              <img src={josticImg} alt="josticImg" />
             </div>
-            <div className="brend-icons">
-              <img src={CryEngineImg} alt="CryEngineImg" />
-              <img src={UnrelEngineImg} alt="UnrelEngineImg" />
+            <div className="section-one">
+              <div className="sc-one-text" data-aos="fade-right">
+                <h5>Proved By prodesigner</h5>
+                <h1>Work that we produce for our clients</h1>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard.
+                </p>
+                <button>Get more details</button>
+              </div>
+              <div className="brend-icons" data-aos="fade-left">
+                <img src={CryEngineImg} alt="CryEngineImg" />
+                <img src={UnrelEngineImg} alt="UnrelEngineImg" />
+              </div>
             </div>
           </div>
         </main>
@@ -67,10 +79,43 @@ export class Home extends Component {
             <div className="section-two">
               <div className="section-two-text">
                 <h1>Currently Trending Games</h1>
-                <button>SEE ALL</button>
+                <div className="see_all_one_btn">
+                  <button type="button" class="button">
+                    <span class="fold"></span>
+
+                    <div class="points_wrapper">
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                      <i class="point"></i>
+                    </div>
+
+                    <span class="inner">
+                      <svg
+                        class="icon"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                      >
+                        <polyline points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37"></polyline>
+                      </svg>
+                      SEEL ALL
+                    </span>
+                  </button>
+                </div>
               </div>
               <div className="section-two-cards">
-                <div className="carousel-container">
+                <div className="carousel-container" data-aos="fade-up">
                   <Slider {...settings}>
                     <div className="card-cr">
                       <img src={militaryImg1} alt="Slide 1" />
@@ -116,7 +161,7 @@ export class Home extends Component {
         {/* 3 */}
         <section>
           <div className="container">
-            <div className="section-three">
+            <div className="section-three" data-aos="zoom-in">
               <h1>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
@@ -127,7 +172,7 @@ export class Home extends Component {
         {/* 4 */}
         <section>
           <div className="container">
-            <div className="section-four">
+            <div className="section-four" data-aos="flip-left">
               <h3>Lorem Ipsum</h3>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -140,7 +185,7 @@ export class Home extends Component {
         {/* 5 */}
         <section>
           <div className="container">
-            <div className="section-five">
+            <div className="section-five" data-aos="flip-right">
               <img className="red_dot_img" src={RedDots} alt="RedDots" />
               <img className="call_of" src={callOfDuty} alt="callOfDuty" />
             </div>
@@ -149,7 +194,7 @@ export class Home extends Component {
         {/* 6 */}
         <section className="section__six_bg">
           <div className="container">
-            <div className="section-six">
+            <div className="section-six" data-aos="fade-up">
               <div className="top__texts">
                 <h1>
                   Lorem Ipsum is simply dummy text of the printing and
@@ -209,20 +254,53 @@ export class Home extends Component {
         <section className="section__seven">
           <div className="container">
             <div className="section-seven">
-              <h2>Our Recent Projects</h2>
-              <p>
+              <h2 data-aos="flip-left">Our Recent Projects</h2>
+              <p data-aos="flip-left">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
               <div className="section-seven-cards">
-                <img src={ProjectCardImg} alt="" />
-                <img src={ProjectCardImg2} alt="" />
-                <img src={ProjectCardImg3} alt="" />
-                <img src={ProjectCardImg4} alt="" />
-                <img src={ProjectCardImg5} alt="" />
-                <img src={ProjectCardImg6} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg2} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg3} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg4} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg5} alt="" />
+                <img data-aos="fade-up" src={ProjectCardImg6} alt="" />
               </div>
-              <button>SEE ALL</button>
+              <div className="see_all_btn">
+                <button type="button" class="button">
+                  <span class="fold"></span>
+
+                  <div class="points_wrapper">
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                  </div>
+
+                  <span class="inner">
+                    <svg
+                      class="icon"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                    >
+                      <polyline points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37"></polyline>
+                    </svg>
+                    SEEL ALL
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -230,7 +308,7 @@ export class Home extends Component {
         <section>
           <div className="container">
             <div className="section-eight">
-              <div className="section-8-text">
+              <div className="section-8-text" data-aos="flip-left">
                 <h4>Lorem Ipsum</h4>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
@@ -238,7 +316,7 @@ export class Home extends Component {
                 </p>
               </div>
               <div className="form_div">
-                <form>
+                <form data-aos="fade-up">
                   <div className="form-text">
                     <div className="asdghjsakjg">
                       <h4>Stay in the loop</h4>
