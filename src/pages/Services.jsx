@@ -5,9 +5,18 @@ import asssasin from "../components/assets/Services/assasin.svg";
 import rembo from "../components/assets/Services/rembo.svg";
 import ot from "../components/assets/Services/ot.svg";
 import "./sass/Services.scss";
+import Slider from "react-slick";
 
 export class Services extends Component {
   render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+    };
+
     return (
       <>
         <aside aside className="container">
@@ -148,34 +157,72 @@ export class Services extends Component {
                 </p>
               </div>
 
-<label class="label">
-  <span class="icon">
-    <svg
-      class="w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="currentColor"
-        stroke-width="1.25"
-        d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-      ></path>
-    </svg>
-  </span>
-  <input
-    type="text"
-    class="input"
-    placeholder="Enter name"
-    autocomplete="off"
-  />
-</label>
-
+              <label class="label">
+                <span class="icon">
+                  <svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-width="1.25"
+                      d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    ></path>
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Enter name"
+                  autocomplete="off"
+                />
+              </label>
             </div>
           </div>
+        </div>
+        <div  className="container">
+          <Slider {...settings}>
+            <div className="card-cr">
+              <img src={"Your Img"} alt="Slide 1" />
+              <div className="card-info">
+                <img src={"Your Img"} alt="Fire" />
+                <p className="follower-p">40 Followers</p>
+              </div>
+            </div>
+            <div className="card-cr">
+              <img src={"Your Img"} alt="Slide 2" />
+              <div className="card-info">
+                <img src={"Your Img"} alt="Fire" />
+                <p className="follower-p">40 Followers</p>
+              </div>
+            </div>
+            <div className="card-cr">
+              <img src={"Your Img"} alt="Slide 3" />
+              <div className="card-info">
+                <img src={"Your Img"} alt="Fire" />
+                <p className="follower-p">40 Followers</p>
+              </div>
+            </div>
+            <div className="card-cr">
+              <img src={"Your Img"} alt="Slide 3" />
+              <div className="card-info">
+                <img src={"Your Img"} alt="Fire" />
+                <p className="follower-p">40 Followers</p>
+              </div>
+            </div>
+            <div className="card-cr">
+              <img src={"Your Img"} alt="Slide 3" />
+              <div className="card-info">
+                <img src={"Your Img"} alt="Fire" />
+                <p className="follower-p">40 Followers</p>
+              </div>
+            </div>
+          </Slider>
         </div>
       </>
     );
