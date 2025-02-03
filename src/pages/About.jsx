@@ -16,16 +16,14 @@ import "slick-carousel/slick/slick-theme.css";
 export class About extends Component {
   render() {
     const settings = {
-      infinite: true, // Cheksiz aylanish
-      speed: 500, // Animatsiya tezligi
-      slidesToShow: 1, // Ko‘rsatiladigan slaydlar soni
-      slidesToScroll: 1, // Har bir bosishda nechta slayd o‘tishi
-      autoplay: true, // Avtomatik o‘tish
-      autoplaySpeed: 3000, // Har 3 sekundda o‘tish
-      arrows: false, // Yon o‘qlarni ko‘rsatish
-      customPaging: (i) => (
-        <div className="custom-dot">{i + 1}</div> // Dotslarni belgilarga o‘zgartirish
-      ),
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      customPaging: (i) => <div className="custom-dot">{i + 1}</div>,
       dots: true,
     };
     return (
